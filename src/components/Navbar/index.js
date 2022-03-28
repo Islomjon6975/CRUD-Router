@@ -16,9 +16,9 @@ export const Navbar = () => {
                         to={item.path}
                         style={({isActive})=>{
                             return{
-                                color: isActive ? 'crimson' : 'white',
+                                color: isActive ? '#2c2d2d' : 'white',
                                 fontWeight: isActive ? 'bold' : 'normal',
-                                borderBottom: isActive && '2px solid crimson'
+                                borderBottom: isActive && '2px solid #2c2d2d'
                             }
                         }}
                     >
