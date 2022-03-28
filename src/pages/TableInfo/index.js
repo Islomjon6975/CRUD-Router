@@ -1,34 +1,40 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Delete, Edit, Search, Search__icon, Search__panel, Select, Table, Title, View, Wrapper } from './style'
 import {data} from '../../utils/data'
 import { useNavigate, useParams } from 'react-router-dom';
 
-export const Home = () => {
-  const [mock, setMock] = useState(data);
+export const TableInfo = () => {
+  const [mock, setMock] = useState(null);
   const [select, setSelect] = useState('firstname')
-  const navigate = useNavigate();
-  
-  const onDelete = (id) => {
-    const res = mock.filter((item) => item.id !== id)
-    setMock(res)
-  }
+  const params = useParams();
+  console.log(data[1])
+      
 
-  const onChange = (e) => {
-    const {value} = e.target
-    const res = data.filter((item) => select === 'firstname' ? item.firstname.toLowerCase().includes(value.toLowerCase()) : select === 'lastname' ? item.lastname.toLowerCase().includes(value.toLowerCase()): item.username.toLowerCase().includes(value.toLowerCase()))
-    setMock(res)
-  }
-
-  const onSelect = (e) => {
-    const {value} = e.target
-    setSelect(value)
-  }
+  useEffect(()=>{
+    setMock(data[1])
+  },[] )
   
+  // const onDelete = (id) => {
+  //   const res = mock.filter((item) => item.id !== id)
+  //   setMock(res)
+  // }
+
+  // const onChange = (e) => {
+  //   const {value} = e.target
+  //   const res = data.filter((item) => select === 'firstname' ? item.firstname.toLowerCase().includes(value.toLowerCase()) : select === 'lastname' ? item.lastname.toLowerCase().includes(value.toLowerCase()): item.username.toLowerCase().includes(value.toLowerCase()))
+  //   setMock(res)
+  // }
+
+  // const onSelect = (e) => {
+  //   const {value} = e.target
+  //   setSelect(value)
+  // }
+
   
   return (
     <Container>
-        <Title>Home Page</Title>
+        {/* <Title>Home Page</Title>
         <Table>
           <thead>
             <tr>
@@ -53,26 +59,27 @@ export const Home = () => {
             </tr>
           </thead>
           <tbody>
-            {mock.map(({id, firstname, lastname, username, email}) => (
-              <tr key={id}>
-                <th>{id}</th>
-                <th>{firstname}</th>
-                <th>{lastname}</th>
-                <th>{username}</th>
-                <th>{email}</th>
+            
+              <tr >
+                <th>{mock.id}</th>
+                <th>{mock.firstname}</th>
+                <th>{mock.lastname}</th>
+                <th>{mock.username}</th>
+                <th>{mock.email}</th>
                 <th> 
                   <Search__panel>
-                  <View onClick={()=>navigate(`/:${id}`)}>View</View>
+                  <View >View</View>
                   <Edit>Edit</Edit>
-                  <Delete onClick={() => onDelete(id)}>Delete</Delete>
+                  <Delete >Delete</Delete>
                   </Search__panel>
                 </th>
               </tr>
-            ))}
+            
             
             
           </tbody>
-        </Table>
+        </Table> */}
+        {mock?.id} - {mock?.firstname}
     </Container>
   )
 }

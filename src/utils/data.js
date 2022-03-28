@@ -28,4 +28,11 @@ export const data = [
         username: 'Ravshan_Qayumov',
         email: 'javlon32@gmail.com',
     },
+    {
+        id: 5,
+        firstname: 'Olimjon',
+        lastname: 'Hikmatov',
+        username: 'Olimjon_Hikmatov',
+        email: 'olimjon@gmail.com',
+    },
 ]

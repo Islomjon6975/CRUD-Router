@@ -9,7 +9,7 @@ export const Navbar = () => {
         <Nav>
             <Wrapper>
                 <Logo>React User</Logo>
-                {navbar.map((item) => (
+                {navbar.map((item) => !item.hidden && (
                     <NavLink 
                         className='navlink' 
                         key={item.id} 
@@ -18,7 +18,8 @@ export const Navbar = () => {
                             return{
                                 color: isActive ? '#2c2d2d' : 'white',
                                 fontWeight: isActive ? 'bold' : 'normal',
-                                borderBottom: isActive && '2px solid #2c2d2d'
+                                borderBottom: isActive && '2px solid #2c2d2d',
+                                padding: '0 5px',
                             }
                         }}
                     >
