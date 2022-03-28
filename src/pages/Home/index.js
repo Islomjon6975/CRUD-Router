@@ -1,11 +1,12 @@
 
 import React from 'react'
-import { Navbar } from '../../components/Navbar'
-import { Container } from './style'
+import { Container, Title } from './style'
 
 export const Home = () => {
   return (
-    <Container><Navbar />
-    fdsfds</Container>
+    <Container>
+        <Title>Home Page</Title>
+        fds
+    </Container>
   )
 }

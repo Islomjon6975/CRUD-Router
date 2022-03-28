@@ -7,6 +7,16 @@ export const Container = styled.div`
     height: 60px;
     background-color: #05defc;
     padding: 0 10%;
+
+    .navlink{
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        color: whitesmoke;
+        margin: 0 10px;
+        text-decoration: none;
+        height: 100%;
+    }
 `
 
 export const Nav = styled.div`
@@ -30,7 +40,19 @@ export const Logo = styled.div`
     margin-right: 25px;
 `
 
-export const Link = styled.div`
-    font-size: 20px;
-    color: whitesmoke;
+export const AddUser = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+    border: 1.5px solid whitesmoke;
+    font-size: 17px;
+    color: white;
+    border-radius: 5px;
+    font-weight: normal;
+    transition: all .6s ease;
+    :active{
+        transform: scale(0.97);
+    }
 `

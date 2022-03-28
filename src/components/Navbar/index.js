@@ -1,6 +1,7 @@
-
 import React from 'react'
-import { Container, Link, Logo, Nav, Wrapper } from './style'
+import { AddUser, Container, Link, Logo, Nav, Wrapper } from './style'
+import {navbar} from '../../utils/navbar'
+import { NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
   return (
@@ -8,9 +9,26 @@ export const Navbar = () => {
         <Nav>
             <Wrapper>
                 <Logo>React User</Logo>
-                <Link>Home</Link>
+                {navbar.map((item) => (
+                    <NavLink 
+                        className='navlink' 
+                        key={item.id} 
+                        to={item.path}
+                        style={({isActive})=>{
+                            return{
+                                color: isActive ? 'crimson' : 'white',
+                                fontWeight: isActive ? 'bold' : 'normal',
+                                borderBottom: isActive && '2px solid crimson'
+                            }
+                        }}
+                    >
+                        {item.title}
+                    </NavLink>
+                ))}
             </Wrapper>
-            <Wrapper>fds</Wrapper>
+            <Wrapper>
+                <AddUser>Add User</AddUser>
+            </Wrapper>
         </Nav>
     </Container>
   )
