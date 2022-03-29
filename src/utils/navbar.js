@@ -2,6 +2,7 @@ import { Home } from "../pages/Home";
 import { About } from "../pages/About";
 import { Contact } from "../pages/Contact";
 import { TableInfo } from '../pages/TableInfo';
+import { Add } from "../pages/Add";
 
 export const navbar = [
     {
@@ -34,6 +35,14 @@ export const navbar = [
         path: '/contact',
         element: <Contact />,
         hidden: false,
+        isPrivate: false,
+    },  
+    {
+        id: 5,
+        title: 'Add',
+        path: '/add',
+        element: <Add />,
+        hidden: true,
         isPrivate: false,
     },  
      

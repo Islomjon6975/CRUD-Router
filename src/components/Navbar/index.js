@@ -1,9 +1,10 @@
 import React from 'react'
 import { AddUser, Container, Link, Logo, Nav, Wrapper } from './style'
 import {navbar} from '../../utils/navbar'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
+    const navigate = useNavigate()
   return (
     <Container>
         <Nav>
@@ -28,7 +29,7 @@ export const Navbar = () => {
                 ))}
             </Wrapper>
             <Wrapper>
-                <AddUser>Add User</AddUser>
+                <AddUser onClick={()=>navigate(`/add`)}>Add User</AddUser>
             </Wrapper>
         </Nav>
     </Container>
