@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Button, Container, Description, GoBack, Input, Title, Wrapper, Wrapper2 } from './style'
 import {data} from '../../utils/data'
 import { DataContext } from '../../context/data'
+import { toast } from 'react-toastify'
 
 export const Add = () => {
   const navigate = useNavigate()
@@ -49,7 +50,7 @@ export const Add = () => {
         return
       }
       navigate('/')
-      
+      toast.success('New user has just been added.')
     
     setMock([
         ...mock,

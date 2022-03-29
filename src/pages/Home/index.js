@@ -5,6 +5,7 @@ import {data} from '../../utils/data'
 import { useNavigate } from 'react-router-dom';
 import { ParamsContext } from '../../context/paramsContext';
 import { DataContext } from '../../context/data'; 
+import { toast } from 'react-toastify';
 
 export const Home = () => {
   const [mock, setMock] = useContext(DataContext);
@@ -15,6 +16,8 @@ export const Home = () => {
   const onDelete = (id) => {
     const res = mock.filter((item) => item.id !== id)
     setMock(res)
+    
+    toast.error(`the person in the ${id}${id === 1 ? 'st' : id === 2 ? 'nd' : 'th'} index is deleted`)
   }
 
   const onChange = (e) => {
@@ -26,6 +29,10 @@ export const Home = () => {
   const onSelect = (e) => {
     const {value} = e.target
     setSelect(value)
+  }
+
+  const onEdit = (id) => {
+    toast.error('This section has not been fixed.')
   }
   
   
@@ -66,7 +73,7 @@ export const Home = () => {
                 <th> 
                   <Search__panel>
                   <View onClick={()=>(navigate(`/tableinfo`), setParams(id))}>View</View>
-                  <Edit>Edit</Edit>
+                  <Edit onClick={()=>onEdit(id)}>Edit</Edit>
                   <Delete onClick={() => onDelete(id)}>Delete</Delete>
                   </Search__panel>
                 </th>
