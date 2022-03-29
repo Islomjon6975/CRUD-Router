@@ -41,7 +41,7 @@ export const TableInfo = () => {
           <Item>{mock.district}</Item>
       </Wrapper>
       <Wrapper>
-        <GoBack onClick={()=>navigate('/')}>Go Back</GoBack>
+        <GoBack onClick={()=>navigate(-1)}>Go Back</GoBack>
       </Wrapper>
       
     </Container>

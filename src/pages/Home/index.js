@@ -4,9 +4,10 @@ import { Container, Delete, Edit, Search, Search__icon, Search__panel, Select, T
 import {data} from '../../utils/data'
 import { useNavigate } from 'react-router-dom';
 import { ParamsContext } from '../../context/paramsContext';
+import { DataContext } from '../../context/data'; 
 
 export const Home = () => {
-  const [mock, setMock] = useState(data);
+  const [mock, setMock] = useContext(DataContext);
   const [select, setSelect] = useState('firstname')
   const navigate = useNavigate();
   const [params, setParams] = useContext(ParamsContext)
@@ -34,7 +35,7 @@ export const Home = () => {
         <Table>
           <thead>
             <tr>
-              <th>#</th>
+              <th>ID</th>
               <th>Name</th>
               <th>Surname</th>
               <th>User Name</th>
