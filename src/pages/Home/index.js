@@ -1,13 +1,15 @@
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Container, Delete, Edit, Search, Search__icon, Search__panel, Select, Table, Title, View, Wrapper } from './style'
 import {data} from '../../utils/data'
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { ParamsContext } from '../../context/paramsContext';
 
 export const Home = () => {
   const [mock, setMock] = useState(data);
   const [select, setSelect] = useState('firstname')
   const navigate = useNavigate();
+  const [params, setParams] = useContext(ParamsContext)
   
   const onDelete = (id) => {
     const res = mock.filter((item) => item.id !== id)
@@ -62,7 +64,7 @@ export const Home = () => {
                 <th>{email}</th>
                 <th> 
                   <Search__panel>
-                  <View onClick={()=>navigate(`/:${id}`)}>View</View>
+                  <View onClick={()=>(navigate(`/tableinfo`), setParams(id))}>View</View>
                   <Edit>Edit</Edit>
                   <Delete onClick={() => onDelete(id)}>Delete</Delete>
                   </Search__panel>

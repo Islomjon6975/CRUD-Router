@@ -15,7 +15,7 @@ export const navbar = [
     {
         id: 2,
         title: 'TableInfo',
-        path: '/:id',
+        path: '/tableinfo',
         element: <TableInfo />,
         hidden: true,
         isPrivate: false,
