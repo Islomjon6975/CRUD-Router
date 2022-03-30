@@ -161,3 +161,33 @@ export const Search__panel = styled.div`
     width: 250px;
     height: 100%;
 `
+
+export const Edit_Input = styled.input`
+    width: 90%;
+    height: 70%;
+    background-color: white;
+    text-align: left;
+    border-bottom: 1px solid rgb(221, 221, 221);
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+`
+
+export const Save = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 23.6px;
+    background-color: white;
+    border: 1px solid #0cd1f8;
+    border-radius: 2px;
+    color: #0cd1f8;
+    margin: 0 5px;
+    cursor: pointer;
+    :active{
+        transform: scale(0.99);
+        opacity: 0.8;
+    }
+`

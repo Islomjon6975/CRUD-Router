@@ -36,7 +36,7 @@ export const Add = () => {
     
       if(state.firstname.length > 0 && state.lastname.length > 0 && state.email.length > 0 && state.tel.length > 0 && state.country.length > 0 && state.province.length > 0 && state.district.length > 0 ){
         var res =  {
-          id: mock.length,
+          id: mock.length + 1,
           firstname: state.firstname,
           lastname: state.lastname,
           email: state.email,

@@ -1,13 +1,17 @@
 
 import React, { useContext, useEffect, useState } from 'react'
 import { Container,  GoBack,  Item,  Item__title,  Wrapper } from './style'
-import {data} from '../../utils/data'
+
 import { useNavigate, useParams } from 'react-router-dom';
 import { ParamsContext } from '../../context/paramsContext';
+import { DataContext } from '../../context/data'; 
+
 
 export const TableInfo = () => {
+  const [dataa, setDataa] = useContext(DataContext)
+  const [data, setData] = useState(dataa)
   const [params, setParams] = useContext(ParamsContext)
-  const [mock, setMock] = useState(data[params]);
+  const [mock, setMock] = useState(data[params-1]);
   const navigate = useNavigate()
   
   return (
