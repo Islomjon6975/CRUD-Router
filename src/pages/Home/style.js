@@ -90,7 +90,7 @@ export const Edit = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 60px;
     height: 23.6px;
     background-color: white;
     border: 1px solid #0cd1f8;
@@ -121,7 +121,7 @@ export const Delete = styled.div`
 `
 
 export const Search = styled.input`
-    width: 93%;
+    width: 85%;
     height: 33px;
     padding: 0 30px 0 10px;
     box-sizing: border-box;
@@ -138,7 +138,7 @@ export const Wrapper = styled.div`
 export const Search__icon = styled(search)`
     position: absolute;
     top: 50%;
-    right:24px;
+    right:44px;
     transform: translateY(-50%);
     width: 17px;
     height: 17px;
@@ -163,7 +163,7 @@ export const Search__panel = styled.div`
 `
 
 export const Edit_Input = styled.input`
-    width: 90%;
+    width: 85%;
     height: 70%;
     background-color: white;
     text-align: left;
@@ -178,7 +178,7 @@ export const Save = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 60px;
     height: 23.6px;
     background-color: white;
     border: 1px solid #0cd1f8;
